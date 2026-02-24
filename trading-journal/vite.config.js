@@ -5,16 +5,13 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
+      external: [],
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'supabase': ['@supabase/supabase-js'],
           'chart': ['chart.js'],
         }
       }
     }
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', '@supabase/supabase-js', 'chart.js']
   }
 })
